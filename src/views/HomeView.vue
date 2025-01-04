@@ -1,24 +1,31 @@
 <template>
-    <div id="app">
-        <PeopleList />
+    <div class="home">
+        <NavBar />
+        <div class="content">
+            <h1>Awareness of Wealthy</h1>
+            <p>Explore the wealth distribution across continents and countries.</p>
+        </div>
     </div>
 </template>
 
 <script>
-import PeopleList from '@/components/PeopleList.vue';
+import NavBar from '@/components/NavBar.vue';
 
 export default {
+    name: "HomeView",
     components: {
-        PeopleList
-    }
-}
+        NavBar,
+    },
+};
 </script>
 
 <style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+.home {
     text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+    margin-top: 2rem;
+}
+
+.content {
+    margin-top: 2rem;
 }
 </style>
