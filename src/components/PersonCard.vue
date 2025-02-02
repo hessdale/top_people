@@ -1,6 +1,6 @@
 <template>
     <div class="person-card">
-        <img :src="person.photo" :alt="`Photo of ${person.name}`" class="person-photo" />
+        <img :src="personPhoto" :alt="`Photo of ${person.name}`" class="person-photo" />
         <div class="person-details">
             <h3 class="person-name">{{ person.name }}</h3>
             <p class="person-networth"><strong>Net Worth:</strong> {{ person.netWorth }}</p>
@@ -16,6 +16,11 @@ export default {
         person: {
             type: Object,
             required: true,
+        },
+    },
+    computed: {
+        personPhoto() {
+            return this.person.image.url ? this.person.image.url : "/user-xmark.svg";
         },
     },
 };
@@ -64,6 +69,6 @@ export default {
 .person-media strong,
 .person-controversies strong {
     font-weight: bold;
-    color: #333;
+    color: #3333;
 }
 </style>
